@@ -21,7 +21,7 @@ public class Moderador extends Pessoa{
 	}
 
 	public boolean cadastrarModerador(String nome, String email, String telefone, Date data, String cpf) {
-		
+		return true;
 	
 	}
 }

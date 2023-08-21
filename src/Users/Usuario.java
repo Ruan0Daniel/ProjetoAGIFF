@@ -38,6 +38,6 @@ public class Usuario extends Pessoa {
 	}
 	
 	public boolean cadastrarUsuario(String nome, String email, String telefone, Date dataNascimento, String instituicaoEnsino) {
-		
+		return true;
 	}
 }

@@ -40,10 +40,10 @@ public class Tag {
 
 
 	public boolean adicionarTag() {
-		
+		return true;
 	}
 	
 	public boolean cadastrarTag(String nome, String descricao) {
-		
+		return true;
 	}
 }

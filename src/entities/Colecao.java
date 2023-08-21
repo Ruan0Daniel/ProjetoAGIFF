@@ -41,6 +41,6 @@ public class Colecao {
 	}
 	
 public boolean cadastrarColecao(String titulo, Date dataCriacao, Usuario criador) {
-		
+		return true;
 	}
 }

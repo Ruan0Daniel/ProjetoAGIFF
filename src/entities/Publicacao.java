@@ -78,15 +78,15 @@ public class Publicacao {
 	}
 
 	public boolean adicionarPublicacao(){
-		
+		return  true;
 	}
 	
 	public boolean determinarAprovacao() {
-		
+		return  true;
 	}
 	
 	public boolean cadastrarPublicacao(String autor, String titulo, String link, Date dataCriacao) {
-		
+		return  true;
 	}
 
 	
