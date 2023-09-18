@@ -6,6 +6,7 @@ import model.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -17,30 +18,23 @@ public class MainAGIFF {
 
 	public static void main(String[] args) {
 		Calendar c = Calendar.getInstance();
-		Usuario usuario1 = new Usuario("John", "john@gmail.com", "9987654321");
+		ImageIcon icon_1 = new ImageIcon("C:\\Users\\caiod\\Documents\\Caio\\SI\\4_periodo\\POO\\Projeto\\src\\program\\logo_02.jpg");
 		ArrayList<Colecao> listaColecoes = new ArrayList<Colecao>();
-		Colecao colecao1 = new Colecao("Computação",c.getTime(), "John");
-		listaColecoes.add(colecao1);
-		
-		//Publicacao publicacao1 = new Publicacao("Paul", "Artigo 1", "www.link.com", c.getTime(), usuario1, colecao1);
-		//Publicacao publicacao2 = new Publicacao("Ringo", "Artigo 2", "www.alfa.com", c.getTime(), usuario1, colecao1);
-		//colecao1.adicionarPublicacao(publicacao1);
-		//colecao1.adicionarPublicacao(publicacao2);
-		//System.out.println(colecao1.getPublicacaoNaLista(0).getAutor());
 		//Interfaces para interação do usuário
-		JOptionPane.showMessageDialog(null, "Bem vindo!", "AgIFF", JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Bem vindo!", "AgIFF", JOptionPane.PLAIN_MESSAGE, icon_1);
 		String[] arrayOpcoes = new String[3];
 		arrayOpcoes[0] = "Cadastrar Coleção";
 		arrayOpcoes[1] = "Cadastrar Publicação";
-		arrayOpcoes[2] = "Sair";
+		arrayOpcoes[2] = "Visualizar Coleções Cadastradas";
+		arrayOpcoes[3] = "Sair";
 		Object opcaoEscolhida = JOptionPane.showInputDialog(null, "Escolha um registro.", "AgIFF" , JOptionPane.PLAIN_MESSAGE, null, arrayOpcoes, "Regular");
 		while((opcaoEscolhida != null) && (opcaoEscolhida.toString().length()>0)) {	
 			int i =0;
 			if(opcaoEscolhida == "Cadastrar Coleção") {	
 				String titulo = JOptionPane.showInputDialog("Informe o título da coleção: ");
 				Date data = c.getTime();
-				String usuario =JOptionPane.showInputDialog("Informe o usuário: ");
-				listaColecoes.add(i,new Colecao( titulo,data, usuario));
+				String usuario = JOptionPane.showInputDialog("Informe o usuário: ");
+				listaColecoes.add(i,new Colecao(titulo,data, usuario));
 				i +=1;
 			}
 			if(opcaoEscolhida == "Cadastrar Publicação") {	
@@ -56,6 +50,13 @@ public class MainAGIFF {
 					}
 				}
 				new Publicacao(autor, titulo, link, data, colecaoEscolhida);
+			}
+			if(opcaoEscolhida == "Visualizar Coleções Cadastradas") {
+				String listagem = "Confira a lista de registros: \n";
+				for(int n = 0; n <listaColecoes.size(); n++) {
+					listagem += "Categoria: " + listaColecoes.get(n).getTitulo() +"\n"+ "Criado em: "+ listaColecoes.get(n).getDataCriacao() +"\n" +  "\n========\n";
+				}
+				JOptionPane.showMessageDialog(null, listagem, "AgIFF", JOptionPane.INFORMATION_MESSAGE, icon_1);
 			}
 			opcaoEscolhida = JOptionPane.showInputDialog(null, "Escolha um registro.", "AgIFF" , JOptionPane.PLAIN_MESSAGE, null, arrayOpcoes, "Regular");
 		}
