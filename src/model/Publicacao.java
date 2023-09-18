@@ -19,6 +19,10 @@ public class Publicacao {
 		this.colecao = colecao;
 	}
 
+	public String getTitulo() {
+		return this.titulo;
+	}
+
 	public String getAutor() {
 		return this.autor;
 	}
