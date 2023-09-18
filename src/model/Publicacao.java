@@ -10,7 +10,7 @@ public class Publicacao {
 	private Usuario moderador;
 	private Colecao colecao;
 	
-	public Publicacao(String autor, String titulo, String link, Date dataCriacao, Colecao colecao) {
+	public Publicacao(String autor, String titulo, String link, Date dataCriacao) {
 		this.autor = autor;
 		this.titulo = titulo;
 		this.link = link;
