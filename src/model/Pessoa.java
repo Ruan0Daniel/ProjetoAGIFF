@@ -11,7 +11,7 @@ public class Pessoa {
 	}
 
 	public Pessoa() {
-		// TODO Auto-generated constructor stub
+
 	}
 	public String getNome() {
 		return nome;

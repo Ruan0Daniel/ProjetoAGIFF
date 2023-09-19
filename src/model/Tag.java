@@ -4,18 +4,21 @@ import java.util.LinkedList;
 
 public class Tag {
 	private String nome, descricao;
-	private LinkedList listaColecao = new LinkedList();
+	private LinkedList listaColecoes = new LinkedList();
 	
 	public Tag(String nome, String descricao) {
 		this.nome = nome;
 		this.descricao = descricao;
 	}
 
-	public LinkedList getColecao() {
-		return listaColecao;
+	public LinkedList getListaColecoes() {
+		return this.listaColecoes;
 	}
 
-	public void adicionarColeca(Colecao colecao) {
-		this.listaColecao.add(colecao);
+	public void associarColecao(Colecao colecao) {
+		this.listaColecoes.add(colecao);
+	}
+	public String getNome() {
+		return this.nome;
 	}
 }

@@ -15,8 +15,6 @@ public class Publicacao {
 		this.titulo = titulo;
 		this.link = link;
 		this.dataCriacao = dataCriacao;
-		this.moderador = moderador;
-		this.colecao = colecao;
 	}
 
 	public String getTitulo() {

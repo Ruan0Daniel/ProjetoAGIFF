@@ -9,8 +9,8 @@ public class Colecao {
 	private String titulo;
 	private Date dataCriacao;
 	private String usuario;
-	private LinkedList<Publicacao> ListaPublicacao = new LinkedList<Publicacao>();
-//	private List <ColecaoListener>colecaoListeners = new LinkedList();
+	private LinkedList<Publicacao> ListaPublicacoes = new LinkedList<Publicacao>();
+	private LinkedList<Tag> ListaTags = new LinkedList<Tag>();
 	
 	
 	public Colecao(String titulo, Date dataCriacao, String usuario) {
@@ -19,18 +19,16 @@ public class Colecao {
 		this.usuario = usuario;
 	}
 	public Colecao() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void adicionarPublicacao(Publicacao publicacao) {
-		this.ListaPublicacao.add(publicacao);
+		this.ListaPublicacoes.add(publicacao);
 		publicacao.setColecao(this);
 	}
-	
-	private synchronized void disparaNovaPublicacao(Publicacao publicacao){		{
-
-		}
-	}
+	public void adicionarTag(Tag tag) {
+		this.ListaTags.add(tag);
+		tag.associarColecao(this);
+	}	
 
 	public String getTitulo() {
 		return titulo;
@@ -45,15 +43,17 @@ public class Colecao {
 		this.titulo = titulo;
 	}
 
-	public LinkedList getListaPublicacao() {
-		return this.ListaPublicacao;
+	public LinkedList getListaPublicacoes() {
+		return this.ListaPublicacoes;
+	}
+	public LinkedList getListaTags() {
+		return this.ListaTags;
 	}
 	public Publicacao getPublicacaoNaLista(int i) {
-		return this.ListaPublicacao.get(i);
+		return this.ListaPublicacoes.get(i);
+	}
+	public Tag getTagNaLista(int i) {
+		return this.ListaTags.get(i);
 	}
 
-	public void adicionarPublicacao(String actionCommand) {
-		// TODO Auto-generated method stub
-		
-	}
 }

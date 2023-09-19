@@ -11,7 +11,5 @@ public class MainAGIFF {
 		
 		view.displayTelaInicial();
 
-
-
 	} 
 }
