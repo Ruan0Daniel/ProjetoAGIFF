@@ -7,7 +7,6 @@ public class Publicacao {
 	
 	private String autor, titulo, link;
 	private Date dataCriacao;
-	private Usuario moderador;
 	private Colecao colecao;
 	
 	public Publicacao(String autor, String titulo, String link, Date dataCriacao) {
