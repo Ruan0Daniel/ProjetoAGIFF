@@ -9,7 +9,7 @@ public class Colecao {
 	private String titulo;
 	private Date dataCriacao;
 	private String usuario;
-	private LinkedList<Publicacao> ListaPublicacoes = new LinkedList<Publicacao>();
+	private int numeroDePublicacoes = 0;
 	private LinkedList<Tag> ListaTags = new LinkedList<Tag>();
 	
 	
@@ -22,7 +22,8 @@ public class Colecao {
 	}
 	
 	public void adicionarPublicacao(Publicacao publicacao) {
-		this.ListaPublicacoes.add(publicacao);
+		//this.ListaPublicacoes.add(publicacao);
+		this.numeroDePublicacoes++;
 		publicacao.setColecao(this);
 	}
 	public void adicionarTag(Tag tag) {
@@ -36,22 +37,23 @@ public class Colecao {
 
 	public Date getDataCriacao() {
 		return dataCriacao;
+	}	
+	public void setNumeroDePublicacoes(int numeroDePublicacoes) {
+		this.numeroDePublicacoes = numeroDePublicacoes;
 	}
-
-	
+	public int getNumeroDePublicacoes() {
+		return this.numeroDePublicacoes;
+	}
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
-	public LinkedList getListaPublicacoes() {
-		return this.ListaPublicacoes;
-	}
+	
 	public LinkedList getListaTags() {
 		return this.ListaTags;
 	}
-	public Publicacao getPublicacaoNaLista(int i) {
-		return this.ListaPublicacoes.get(i);
-	}
+	
+	
 	public Tag getTagNaLista(int i) {
 		return this.ListaTags.get(i);
 	}

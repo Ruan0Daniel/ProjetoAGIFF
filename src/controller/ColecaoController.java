@@ -6,7 +6,7 @@ import model.Colecao;
 import model.Publicacao;
 import model.Tag;
 
-public class ColecaoController {
+public class ColecaoController implements ControllerInterface {
 	private LinkedList<Colecao> listaColecoes = new LinkedList<Colecao>();
 	
 	public void adicionarColecao(Colecao colecao) {
@@ -21,6 +21,14 @@ public class ColecaoController {
 		}
 		return false;
 	}
+	public Colecao buscarColecao(String colecaoTitulo){
+		for(int j = 0; j<= this.getListaColecoes().size()-1; j++) {
+			if(this.getListaColecoes().get(j).getTitulo().contains(colecaoTitulo)) {
+					return this.getListaColecoes().get(j) ;
+			}
+		}
+		return null;
+	}
 	public void associarTageColecao(String tituloDaColecao, Tag tag) {
 		for(int j = 0; j<= this.getListaColecoes().size()-1; j++) {
 			if(this.getListaColecoes().get(j).getTitulo().contains(tituloDaColecao)) {
@@ -29,34 +37,11 @@ public class ColecaoController {
 			}
 		}
 	}
-	public String imprimirInfoColecoes() {
-		String listagem = "Confira a lista de Coleções\n";
-		for(int n = 0; n <this.getListaColecoes().size(); n++) {
-			listagem += "Título da Coleção: " + this.getListaColecoes().get(n).getTitulo() +"\n"+ "Criado em: "+ this.getListaColecoes().get(n).getDataCriacao() +"\n" + "Publicações: " +"\n" ;
-			for(int m =0; m<=this.getListaColecoes().get(n).getListaPublicacoes().size()-1; m++) {
-				listagem += this.getListaColecoes().get(n).getPublicacaoNaLista(m).getTitulo() + "\n";
-			}
-			listagem += "Tags da Coleção:\n";
-			for(int k =0; k<=this.getListaColecoes().get(n).getListaTags().size()-1; k++) {
-				listagem += this.getListaColecoes().get(n).getTagNaLista(k).getNome() + "\n";
-			}	
-			listagem +=  "========\n";
-		}
-		return listagem;
-	}
-	public String imprimirInfoColecao(String string) {
-		String infoColecao = "Confira o conteúdo da Coleção " + string;
+	public String imprimirInfo(String colecaoTitulo) {
+		String infoColecao = "Confira o conteúdo da Coleção " + colecaoTitulo;
 		for(int j = 0; j<= this.getListaColecoes().size()-1; j++) {
-			if(this.getListaColecoes().get(j).getTitulo().contains(string)) {
+			if(this.getListaColecoes().get(j).getTitulo().contains(colecaoTitulo)) {
 				infoColecao += "\n"+ "Criado em: "+ this.getListaColecoes().get(j).getDataCriacao().toString() +"\n" + "Publicações: ";
-				infoColecao += "Publicações: " +"\n" ;
-				for(int m =0; m<= this.getListaColecoes().get(j).getListaPublicacoes().size()-1; m++) {
-					infoColecao+= this.getListaColecoes().get(j).getPublicacaoNaLista(m).getTitulo() + "\n";
-				}
-				infoColecao += "Tags da Coleção:\n";
-				for(int k =0; k<=this.getListaColecoes().get(j).getListaTags().size()-1; k++) {
-					infoColecao += this.getListaColecoes().get(j).getTagNaLista(k).getNome() + "\n";
-				}
 				infoColecao +=  "========\n";
 			}
 		}

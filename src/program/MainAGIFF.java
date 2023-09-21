@@ -1,15 +1,15 @@
 package program;
 
-import view.ColecaoView;
+import view.MainView;
 import controller.ColecaoController;
+import controller.PublicacaoController;
 
 public class MainAGIFF {
 
 	public static void main(String[] args) {
-		ColecaoController controller = new ColecaoController();
-		ColecaoView view = new ColecaoView(controller);
-		
+		ColecaoController colecaoController = new ColecaoController();
+		PublicacaoController publicacaoController = new PublicacaoController();
+		MainView view = new MainView(colecaoController, publicacaoController);
 		view.displayTelaInicial();
-
 	} 
 }

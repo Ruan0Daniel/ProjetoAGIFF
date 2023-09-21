@@ -40,5 +40,11 @@ public class Publicacao {
 	public void setColecao(Colecao colecao) {
 		this.colecao = colecao;
 	}
+	
+	public String toString() {
+		String publicaoToStrig = "Título: " + this.titulo + " -  " + "Autor: " + this.autor + "\n" +
+							     "Link: " + this.link + "\n";
+		return publicaoToStrig;
 
+	}
 }
