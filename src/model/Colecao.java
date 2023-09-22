@@ -24,9 +24,6 @@ public class Colecao {
 	public String getTitulo() {
 		return titulo;
 	}
-	public Date getDataCriacao() {
-		return dataCriacao;
-	}	
 	public void setNumeroDePublicacoes(int numeroDePublicacoes) {
 		this.numeroDePublicacoes = numeroDePublicacoes;
 	}

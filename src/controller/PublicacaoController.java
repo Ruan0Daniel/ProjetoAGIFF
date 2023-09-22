@@ -9,6 +9,18 @@ import model.Publicacao;
 public class PublicacaoController {
 	private LinkedList<Publicacao> listaPublicacoes = new LinkedList<Publicacao>();
 	
+	
+	public LinkedList<Publicacao> getListaPublicacoes() {
+		return listaPublicacoes;
+	}
+	public Publicacao buscarColecao(String publicacaoTitulo){
+		for(int j = 0; j<= this.getListaPublicacoes().size()-1; j++) {
+			if(this.getListaPublicacoes().get(j).getTitulo().contains(publicacaoTitulo)) {
+					return this.getListaPublicacoes().get(j) ;
+			}
+		}
+		return null;
+	}
 	public boolean associarPublicacao(Publicacao publicacao, Colecao colecao) {
 		if(colecao != null) {
 			this.listaPublicacoes.add(publicacao);

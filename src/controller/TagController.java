@@ -19,6 +19,6 @@ public class TagController {
 				return this.getListaTags().get(i);
 			}
 		}
-		return this.getListaTags().get(0);
+		return null;
 	}
 }

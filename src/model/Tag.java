@@ -1,6 +1,5 @@
 package model;
 
-import java.util.LinkedList;
 
 public class Tag {
 	private String nome, descricao;
